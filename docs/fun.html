@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG animation</title>
+    <style>
+        main {
+            transform-origin: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /*         main {
+            display: flex;
+            height: 100vh;
+            width: calc(100vw-2*17px);
+            justify-content: center;
+            align-items: center;
+        } */
+    </style>
+</head>
+
+<body>
+    <main>
+        <svg id="mouse" width="300" height="300">
+            <rect x="75" y="75" width="150" height="150" fill="transparent" stroke="black" stroke-width="4">
+                <animateTransform attributeName="transform" type="rotate" values="0 150 150; 360 150 150" begin="2s"
+                    dur="4s" repeatCount="indefinite" />
+            </rect>
+            <rect x="75" y="75" width="150" height="150" fill="transparent" stroke="black" stroke-width="4">
+                <animate attributeName="x" from="0" to="75" begin="0s" dur="2s" />
+                <animate attributeName="y" from="0" to="75" begin="0s" dur="2s" />
+                <animateTransform attributeName="transform" type="rotate" values="0 150 150; 360 150 150" begin="2.2s"
+                    dur="4s" repeatCount="indefinite" />
+            </rect>
+            <rect x="75" y="75" width="150" height="150" fill="transparent" stroke="black" stroke-width="4">
+                <animate attributeName="x" from="150" to="75" begin=".2s" dur="2s" />
+                <animate attributeName="y" from="0" to="75" begin=".2s" dur="2s" />
+                <animateTransform attributeName="transform" type="rotate" values="0 150 150; 360 150 150" begin="2.4s"
+                    dur="4s" repeatCount="indefinite" />
+            </rect>
+            <rect x="75" y="75" width="150" height="150" fill="transparent" stroke="black" stroke-width="4">
+                <animate attributeName="x" from="0" to="75" begin=".4s" dur="2s" />
+                <animate attributeName="y" from="150" to="75" begin=".4s" dur="2s" />
+                <animateTransform attributeName="transform" type="rotate" values="0 150 150; 360 150 150" begin="2.6s"
+                    dur="4s" repeatCount="indefinite" />
+            </rect>
+            <rect x="75" y="75" width="150" height="150" fill="transparent" stroke="black" stroke-width="4">
+                <animate attributeName="x" from="150" to="75" begin=".6s" dur="2s" />
+                <animate attributeName="y" from="150" to="75" begin=".6s" dur="2s" />
+                <animateTransform attributeName="transform" type="rotate" values="0 150 150; 360 150 150" begin="2.8s"
+                    dur="4s" repeatCount="indefinite" />
+            </rect>
+            <circle cx="150" cy="150" fill="none" r="50" stroke="black" opacity="0" stroke-width="4">
+                <animate attributeName="opacity" values="0;1" begin="3s" dur="1s" />
+                <animate attributeName="r" values="50;70" dur="1.5s" begin="3s" repeatCount="indefinite" />
+                <animate attributeName="opacity" from="1" to="0" dur="1.5s" begin="3s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="150" cy="150" fill="black" opacity="0" r="50">
+                <animate attributeName="opacity" values="0;1" begin="3s" dur="1s" fill="freeze" />
+            </circle>
+        </svg>
+    </main>
+</body>
+<script>
+    let circle = document.getElementById("mouse")
+    let mouseArea = document.getElementsByTagName("main")[0]
+    let mousePosition = {
+        x: 0,
+        y: 0
+    }
+    let size= {
+        x: 150,
+        y: 150
+    }
+
+    function animate() {
+        setPosition()
+
+        window.requestAnimationFrame(animate)
+    }
+
+    function setPosition() {
+        circle.style.transform = `translateX(${mousePosition.x}px) translateY(${mousePosition.y}px)`
+    }
+    mouseArea.addEventListener("mousemove", e => {
+        mousePosition.x = e.clientX - size.x
+        mousePosition.y = e.clientY - size.y
+    })
+    animate()
+</script>
+
+</html>
