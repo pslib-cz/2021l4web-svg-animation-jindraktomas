@@ -1,2 +1,3 @@
-# 2021l4web-svg-animation-jindraktomas
-2021l4web-svg-animation-jindraktomas created by GitHub Classroom
+**Author:** Tomáš Jindrák
+
+Link to **[Demo](https://pslib-cz.github.io/2021l4web-svg-animation-jindraktomas/)**
