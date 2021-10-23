@@ -1,0 +1,33 @@
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" >
+            <rect x="75" y="75" width="150" height="150" fill="transparent"  stroke="black" stroke-width="4">
+                <animateTransform attributeName="transform" type="rotate" values="0 150 150; 360 150 150" begin="2s" dur="4s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="75" y="75" width="150" height="150" fill="transparent" stroke="black" stroke-width="4">
+                <animate attributeName="x" from="0" to="75" begin="0s" dur="2s" />
+                <animate attributeName="y" from="0" to="75" begin="0s" dur="2s" />
+                <animateTransform attributeName="transform" type="rotate" values="0 150 150; 360 150 150" begin="2.2s" dur="4s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="75" y="75" width="150" height="150" fill="transparent" stroke="black" stroke-width="4">
+                <animate attributeName="x" from="150" to="75" begin=".2s" dur="2s"/>
+                <animate attributeName="y" from="0" to="75" begin=".2s" dur="2s" />
+                <animateTransform attributeName="transform" type="rotate" values="0 150 150; 360 150 150" begin="2.4s" dur="4s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="75" y="75" width="150" height="150" fill="transparent" stroke="black" stroke-width="4">
+                <animate attributeName="x" from="0" to="75" begin=".4s" dur="2s"/>
+                <animate attributeName="y" from="150" to="75" begin=".4s" dur="2s"/>
+                <animateTransform attributeName="transform" type="rotate" values="0 150 150; 360 150 150" begin="2.6s" dur="4s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="75" y="75" width="150" height="150" fill="transparent" stroke="black" stroke-width="4">
+                <animate attributeName="x" from="150" to="75" begin=".6s" dur="2s" />
+                <animate attributeName="y" from="150" to="75" begin=".6s" dur="2s" />
+                <animateTransform attributeName="transform" type="rotate" values="0 150 150; 360 150 150" begin="2.8s" dur="4s" repeatCount="indefinite"/>
+            </rect>
+            <circle cx="150" cy="150" fill="none" r="50" stroke="black" opacity="0" stroke-width="4">
+                <animate attributeName="opacity" values="0;1" begin="3s" dur="1s"/>
+                <animate attributeName="r" values="50;70" dur="1.5s" begin="3s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" from="1" to="0" dur="1.5s" begin="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="150" cy="150" fill="black" opacity="0" r="50">
+                <animate attributeName="opacity" values="0;1" begin="3s" dur="1s" fill="freeze"/>
+            </circle>     
+        </svg>
